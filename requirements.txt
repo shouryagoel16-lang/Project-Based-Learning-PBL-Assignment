@@ -1,0 +1,36 @@
+# ==========================================================================
+#  requirements.txt — ANPR System Dependencies
+# ==========================================================================
+#
+#  Install with:
+#      pip install -r requirements.txt
+#
+#  Notes for Raspberry Pi:
+#    • Use `opencv-python-headless` instead of `opencv-python` on headless
+#      setups to avoid pulling in GTK / Qt.
+#    • Tesseract must be installed at the OS level:
+#        sudo apt install tesseract-ocr
+#    • On a Pi Zero, ultralytics can be slow to install (~10 min) due to
+#      compiling native extensions. Consider pre-built wheels if available.
+# ==========================================================================
+
+# Computer vision
+opencv-python>=4.8.0
+
+# OCR engine (Python wrapper — Tesseract binary required on PATH)
+pytesseract>=0.3.10
+
+# YOLOv8 model support
+ultralytics>=8.0.0
+
+# Dashboard
+streamlit>=1.28.0
+
+# System performance monitoring
+psutil>=5.9.0
+
+# Data handling (used by Streamlit for log tables)
+pandas>=2.0.0
+
+# Numerical arrays (transitive dep, pinned for reproducibility)
+numpy>=1.24.0
